@@ -4,6 +4,7 @@ import PatientForm from './components/PatientForm';
 import PatientList from './components/PatientList';
 import MonthlyReport from './components/MonthlyReport';
 import ConfirmModal from './components/ConfirmModal';
+import InstallPrompt from './components/InstallPrompt';
 import { loadRecords, saveRecords } from './utils/storage';
 import { generateId } from './utils/calculations';
 
@@ -58,6 +59,7 @@ export default function App() {
 
   return (
     <div className="app">
+      <InstallPrompt />
       <Header view={view} onViewChange={setView} onNewRecord={openNew} />
 
       <main className="main-content">

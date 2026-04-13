@@ -911,6 +911,89 @@ body {
 .modal-message { font-size: 0.875rem; color: var(--gray-500); line-height: 1.5; }
 .modal-actions { display: flex; gap: 10px; margin-top: 8px; }
 
+/* ===== Install Banner (PWA) ===== */
+.install-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 300;
+  background: #1e293b;
+  color: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 420px;
+  width: calc(100% - 32px);
+  animation: slide-up .3s ease;
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.install-banner-icon {
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.install-banner-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  min-width: 0;
+}
+.install-banner-text strong {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.install-banner-text span { color: #94a3b8; }
+
+.install-btn {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s;
+  white-space: nowrap;
+}
+.install-btn:hover { background: var(--primary-dark); }
+
+.install-close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,.1);
+  color: #94a3b8;
+  cursor: pointer;
+  transition: background .15s;
+}
+.install-close:hover { background: rgba(255,255,255,.2); color: #fff; }
+
+/* Safe area for notch/home indicator on iPhone */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .install-banner { bottom: calc(20px + env(safe-area-inset-bottom)); }
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
   .report-layout { flex-direction: column !important; }
