@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-export default function Header({ view, onViewChange, onNewRecord, onExport, onImport }) {
+export default function Header({ view, onViewChange, onNewRecord, onExport, onImport, user, onLogout }) {
   const fileRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -127,6 +127,16 @@ export default function Header({ view, onViewChange, onNewRecord, onExport, onIm
           </svg>
           Nova Anestesia
         </button>
+
+        {/* Avatar + logout */}
+        {user && (
+          <button className="user-avatar" onClick={onLogout} title={`Sair (${user.email})`}>
+            {user.photoURL
+              ? <img src={user.photoURL} alt={user.displayName} referrerPolicy="no-referrer" />
+              : <span>{user.email?.[0]?.toUpperCase()}</span>
+            }
+          </button>
+        )}
       </div>
     </header>
   );
