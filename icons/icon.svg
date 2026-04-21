@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" fill="#2563eb"/>
+
+  <!-- Pulse / ECG line (anesthesia monitor symbol) -->
+  <polyline
+    points="64,256 160,256 192,160 224,352 272,192 304,296 336,256 448,256"
+    fill="none"
+    stroke="white"
+    stroke-width="36"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
