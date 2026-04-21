@@ -50,6 +50,15 @@ export default function Header({ view, onViewChange, onNewRecord, onExport, onIm
           </svg>
           Relatório Mensal
         </button>
+        <button
+          className={`nav-btn ${view === 'fasting' ? 'active' : ''}`}
+          onClick={() => onViewChange('fasting')}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 1 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/>
+          </svg>
+          Jejum
+        </button>
       </nav>
 
       <div className="header-actions">

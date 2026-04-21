@@ -14,6 +14,7 @@ import Header from './components/Header';
 import PatientForm from './components/PatientForm';
 import PatientList from './components/PatientList';
 import MonthlyReport from './components/MonthlyReport';
+import FastingGenerator from './components/FastingGenerator';
 import ConfirmModal from './components/ConfirmModal';
 import InstallPrompt from './components/InstallPrompt';
 
@@ -182,6 +183,7 @@ export default function App() {
           />
         )}
         {view === 'monthly' && <MonthlyReport records={records} />}
+        {view === 'fasting' && <FastingGenerator />}
       </main>
 
       {deleteId && (
