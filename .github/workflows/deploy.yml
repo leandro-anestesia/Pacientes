@@ -6,6 +6,7 @@ on:
       - main
       - master
       - claude/anesthesia-payment-app-uk7PF
+      - claude/add-fasting-generator-page-Hf90z
 
   workflow_dispatch: # permite rodar manualmente pelo GitHub
 
